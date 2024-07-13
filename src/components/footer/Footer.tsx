@@ -3,10 +3,12 @@ import styled from 'styled-components'
 
 const FooterContainer = styled.header`
     position: relative;
+    flex: 0 0 auto;
     overflow: hidden;
     background: #121825;
     color: #FFFFFF;
     border: 1px solid #222B44;
+    z-index: 2;
 
     &::before {
         content: '';
@@ -28,15 +30,6 @@ const Footer = () => {
     <FooterContainer>
       <Container>
         Footer
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-
         <div>asdasd</div>
         <div>asdasd</div>
         <div>asdasd</div>

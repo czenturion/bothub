@@ -8,11 +8,20 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
+        display: flex;
+        flex-direction: column;
         font-family: "IBM Plex Sans", sans-serif;
         font-weight: 400;
         font-style: normal;
         color: #FFFFFF;
         background-color: #0E0C15;
+    }
+    
+    html,
+    body, 
+    #root {
+        height: 100%;
+        width: 100%;
     }
 `
 
