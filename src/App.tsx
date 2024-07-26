@@ -6,19 +6,21 @@ import Home from './pages/Home'
 import GlobalStyles from './styles/GlobalStyles'
 import NotFound from './pages/NotFound'
 import styled from 'styled-components'
-import { ReactComponent as GridBackground } from './assets/GridBackground.svg'
-import Container from './styles/Container'
+
 
 const AppContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
 `
 
-const ContentContainer = styled.div`
+const ContentContainer = styled.main`
+    position: relative;
     flex: 1;
-    display: flex;      
+    display: flex;
     flex-direction: column;
     height: 100%;
 `
@@ -30,31 +32,12 @@ const ContentPages = styled.div`
     height: 100%;
 `
 
-const Background = styled.div`
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    overflow: hidden;
-    width: 100vw;
-    height: 100%;
-`
-
-const BackContainer = styled.div`
-    margin: 0 auto;
-`
-
 const App = () => {
   return (
     <AppContainer>
-      <Background>
-        <BackContainer>
-          <GridBackground/>
-        </BackContainer>
-      </Background>
+      <GlobalStyles/>
+      <Header/>
       <ContentContainer>
-        <GlobalStyles/>
-        <Header/>
         <ContentPages>
           <Routes>
             <Route path="/" element={ <Home/> }/>

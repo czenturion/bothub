@@ -1,7 +1,7 @@
 import Container from '../../styles/Container'
 import styled from 'styled-components'
 
-const FooterContainer = styled.header`
+const FooterContainer = styled.footer`
     position: relative;
     flex: 0 0 auto;
     overflow: hidden;

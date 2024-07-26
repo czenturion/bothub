@@ -19,9 +19,13 @@ const GlobalStyles = createGlobalStyle`
     
     html,
     body, 
-    #root {
+    :root {
         height: 100%;
         width: 100%;
+    }
+    
+    :root {
+        --bothub-scale: 0.9;
     }
 `
 
