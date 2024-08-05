@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
     border: 1px solid #222B44;
     position: sticky;
     z-index: 1000;
-    opacity: .8;
+    opacity: .95;
     transition: opacity ease .3s;
 
     &:hover {

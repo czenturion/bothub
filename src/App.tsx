@@ -11,25 +11,19 @@ import styled from 'styled-components'
 const AppContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    min-height: 100vh;
 `
 
 const ContentContainer = styled.main`
     position: relative;
-    flex: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
 `
 
 const ContentPages = styled.div`
     flex: 1;
     position: relative;
-    width: 100%;
-    height: 100%;
 `
 
 const App = () => {

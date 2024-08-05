@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     }
     
     :root {
-        --bothub-scale: 0.9;
+        //--bothub-scale: 0.9;
     }
 `
 
