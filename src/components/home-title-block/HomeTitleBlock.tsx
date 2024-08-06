@@ -1,6 +1,8 @@
+// import '../../styles/GlobalStyles'
 import styled from 'styled-components'
 import React from 'react'
 import GridBackground from '../../assets/GridBackground.svg'
+import { ReactComponent as Avatar } from '../../assets/icons/ChatGPTWindowAvatar.svg'
 
 
 const ChatGPTContainer = styled.div`
@@ -10,14 +12,15 @@ const ChatGPTContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    row-gap: 46px;
+
     @media (min-width: 1060px) {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     @media (max-width: 1060px) {
-        
+
         p {
             text-align: justify;
         }
@@ -30,7 +33,7 @@ const BackContainer = styled.div`
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background-image: url(${GridBackground});
+    background-image: url(${ GridBackground });
     background-position: center top;
     background-repeat: repeat-x;
     opacity: .35;
@@ -48,7 +51,7 @@ const Title = styled.div`
         max-width: 525px;
         justify-content: center;
     }
-    
+
     :last-child {
         margin-top: 22px;
     }
@@ -87,7 +90,10 @@ const ChatGPTWindow = styled.div`
     max-width: 741px;
     background-color: rgba(18, 24, 37, 1);
     border-radius: 24px;
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, rgba(54, 63, 84, 1), rgba(54, 63, 84, 0) 100%);
     
+
     @media (max-width: 1060px) {
         max-width: none;
     }
@@ -95,24 +101,90 @@ const ChatGPTWindow = styled.div`
 
 const ChatGPTWindowHeader = styled.div`
     display: flex;
-    flex-direction: row;
-    height: 82px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 82px;
     padding: 16px 24px 16px 24px;
+    border-radius: 24px 24px 0 0;
+    border: 1px solid rgba(55, 65, 81, 1);
+`
+
+const BotName = styled.div`
+    display: flex;
+    gap: 12px;
+    align-items: center;
+`
+
+const BotNameFirst = styled.p`
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 1);
+`
+
+const BotNameSecond = styled.p`
+
+    color: rgba(97, 109, 141, 1);
+`
+
+const CheckBox = styled.div`
+    display: flex;
+    gap: 12px;
+    align-items: center;
+`
+
+const CheckBoxText = styled.p`
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 1);
+`
+
+const CheckBoxInput = styled.input.attrs({ type: 'checkbox' })`
+    width: 20px;
+    height: 20px;
 `
 
 
 const HomeTitleBlock = () => {
+
   return (
     <ChatGPTContainer>
       <Title>
-        <BackContainer />
-        <TitleTitle>ChatGPT: ваш умный помощник</TitleTitle>
-        <TitleText>Экспериментируйте с ChatGPT-4, Midjourney и Claude в одном месте. Без VPN и абонентской платы. Создавайте
-          контент, обрабатывайте данные и получайте ответы на вопросы через удобный интерфейс!</TitleText>
-        <GettingStartButton>Начать работу</GettingStartButton>
+        <BackContainer/>
+        <TitleTitle>
+          ChatGPT: ваш умный помощник
+        </TitleTitle>
+        <TitleText>
+          Экспериментируйте с ChatGPT-4, Midjourney и Claude в одном месте.
+          Без VPN и абонентской платы.
+          Создавайте контент, обрабатывайте данные и получайте ответы на вопросы через удобный интерфейс!
+        </TitleText>
+        <GettingStartButton>
+          Начать работу
+        </GettingStartButton>
       </Title>
       <ChatGPTWindow>
-        <ChatGPTWindowHeader></ChatGPTWindowHeader>
+        <ChatGPTWindowHeader>
+          <BotName>
+            <Avatar/>
+            <div>
+              <BotNameFirst>
+                BotHub: ChatGPT & Midjourney
+              </BotNameFirst>
+              <BotNameSecond>
+                bot
+              </BotNameSecond>
+            </div>
+          </BotName>
+          <CheckBox>
+            <CheckBoxText>
+              Сохранить контекст
+            </CheckBoxText>
+            <CheckBoxInput />
+          </CheckBox>
+        </ChatGPTWindowHeader>
       </ChatGPTWindow>
     </ChatGPTContainer>
   )
